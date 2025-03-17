@@ -112,18 +112,7 @@ footer {
     .social-link { padding: 8px 16px; font-size: 14px; }
 }
 /* Toggle Switch Styling */
-.mode-toggle {
-    position: relative;
-    width: 50px;
-    height: 25px;
-    display: inline-block;
-}
 
-.mode-toggle input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
 
 .slider {
     position: absolute;
@@ -188,4 +177,218 @@ h1{
     padding: 20px;
     background: #444;
     border-radius: 20px;
+}
+/* Navigatiebalk styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(34, 34, 34, 0.675); /* Semi-transparante achtergrond */
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+/* Navigatie-items */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s, background 0.3s;
+}
+
+/* Hover-effect */
+.navbar ul li a:hover {
+    background: #00ff99;
+    color: black;
+}
+
+/* Zorg dat de secties niet achter de navbar vallen */
+section {
+    padding: 100px 20px;
+    margin-top: 50px;
+}
+
+/* Light Mode ondersteuning */
+body.light-mode .navbar {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .navbar ul li a {
+    color: black;
+}
+
+body.light-mode .navbar ul li a:hover {
+    background: #222;
+    color: white;
+}
+/* Pas de tekstgrootte aan binnen de sectie */
+.profile-section {
+    font-size: 14px; /* Maak de tekst kleiner */
+    line-height: 1.6; /* Zorg voor betere leesbaarheid */
+    max-width: 80%; /* Zorg dat het niet te breed wordt */
+    margin: auto; /* Centreer de tekst */
+    padding: 20px;
+}
+/* Algemene styling voor de mode toggle */
+.mode-toggle {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 25px;
+    margin-right: 20px;
+}
+
+/* Verberg de standaard checkbox */
+.mode-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Stijl voor de slider (de schakelknop zelf) */
+.mode-toggle .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Standaard lichtgrijze kleur */
+    border-radius: 25px;
+    transition: 0.4s;
+}
+
+/* Het bolletje binnen de slider */
+.mode-toggle .slider:before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* Wanneer de toggle is ingeschakeld (dark mode) */
+.mode-toggle input:checked + .slider {
+    background-color: #00ff99; /* Groene kleur bij activeren */
+}
+
+/* Verplaats het bolletje naar rechts in dark mode */
+/* Verplaats het bolletje naar rechts in dark mode */
+.mode-toggle input:checked + .slider:before {
+    transform: translateX(2px); /* Verklein de waarde van 24px naar 20px */
+}
+.mode-toggle {
+    width: 50px; /* Verhoog indien nodig de breedte van de knop */
+}
+
+/* Standaard navigatiebalk styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(34, 34, 34, 0.8);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+    transition: background 0.3s;
+}
+
+/* Verberg de lijst standaard in mobiel formaat */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Navigatie-items */
+.navbar ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: color 0.3s, background 0.3s;
+}
+
+/* Hamburger menu styling */
+/* Hamburger knop met vierkante achtergrond */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1500;
+    background: rgba(0, 0, 0, 0.8); /* Zwarte achtergrond met transparantie */
+    padding: 10px;
+    border-radius: 8px; /* Optioneel, maak het iets afgerond */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Een lichte schaduw voor contrast */
+}
+
+/* Balkjes in de hamburger-knop */
+.bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+
+/* Maak de navbar responsief */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .navbar ul {
+        display: none; /* Verberg de lijst op mobiel */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(34, 34, 34, 0.9);
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .navbar ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Toon het menu als het actief is */
+    .navbar.active ul {
+        display: flex;
+    }
 }

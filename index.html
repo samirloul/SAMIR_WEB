@@ -8,26 +8,42 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Samir</h1>
-        <div class="mode-toggle">
-          <input type="checkbox" id="modeSwitch">
-          <label for="modeSwitch" class="slider"></label>
-      </div>
-      
-    </header>
+
+    
+  <nav class="navbar">
+    <div class="menu-toggle" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    
+    <ul>
+      <div class="mode-toggle">
+        <input type="checkbox" id="modeSwitch">
+        <label for="modeSwitch" class="slider"></label>
+    </div>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#education">My Educational Journey</a></li>
+        <li><a href="#more">More About Me</a></li>
+        <li><a href="#contact">Contact</a></li>
+        
+    </ul>
+</nav>
+
+  </header>
+
+<main> 
+   <section id="about" class="profile-section"></section>
+  <div class="sa">
+    <h2>About Me</h2>
     <img src="Afbeelding van WhatsApp op 2025-01-25 om 09.04.01_edeca18e.jpg" alt="A photo of me" class="profile-pic">
     <img src="Afbeelding van WhatsApp op 2025-01-25 om 09.04.01_c217f62c.jpg" alt="A photo of me" class="profile-pic">
     <img src="Afbeelding van WhatsApp op 2025-01-25 om 09.04.01_508be56e.jpg" alt="A photo of me" class="profile-pic">
-  <div class="sa">
-    <h1>About Me</h1>
   </div>
-  </header>
-
-<main>
   <div class="la">
   <div class="name">
-  <section class="profile-section">
+
+
 <div class="profile">
     <p class="intro">
       My name is <span class="highlight">Samir Loul</span>, and I come from Syria. I currently live in the Netherlands, 
@@ -39,7 +55,7 @@
 </div>
   </section>
 
-  <section class="education-section">
+  <section id="education" class="education-section">
     <h2>My Educational Journey</h2>
     <p>
       I began my educational journey in the Netherlands at <strong>Ithaka (ISK)</strong>, where I studied from 
@@ -53,7 +69,7 @@
     </ul>
   </section>
 
-  <section class="personal-section">
+  <section id="more" class="personal-section">
     <h2>More About Me</h2>
     <p>
       Each step has been a learning experience filled with challenges and opportunities, and I’m proud of how far I’ve come.
@@ -64,6 +80,8 @@
   </section>
 </main><!-- Begin Brevo Form -->
 <!-- START - We recommend to place the below code in head tag of your website html  -->
+<section id="contact">
+
 <style>
   @font-face {
     font-display: block;
@@ -249,7 +267,7 @@
 
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
-
+</section>
 <!-- END - We recommend to place the above code in footer or bottom of your website html  -->
 <!-- End Brevo Form -->
  <div class="thanks">
