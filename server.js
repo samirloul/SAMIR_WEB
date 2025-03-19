@@ -73,18 +73,19 @@ app.post('/submit-form', upload.none(), async (req, res) => {
             htmlContent: emailContent
         }, {
             headers: {
-                'api-key': process.env.BREVO_API_KEY, // Zorg dat deze is ingesteld
+                'api-key': process.env.BREVO_API_KEY,
                 'Content-Type': 'application/json'
             }
         });
-
-        console.log("📨 E-mail succesvol verzonden:", response.data);
+    
+        console.log("📨 E-mail verzonden met respons:", response.data); // 🔍 Log API response
         res.json({ message: "Je bericht is verzonden!" });
-
+    
     } catch (error) {
         console.error("❌ Fout bij verzenden via Brevo:", error.response?.data || error.message);
         res.status(500).json({ message: "Er is iets misgegaan bij het verzenden van je bericht." });
     }
+    
 });
 
 // ✅ Route om de website weer te geven
