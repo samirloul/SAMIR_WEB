@@ -25,3 +25,35 @@ document.addEventListener("DOMContentLoaded", function() {
         updateMode();
     });
 });
+document.getElementById("contactForm").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Voorkom herladen van de pagina
+
+    let naam = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let vraag = document.getElementById("question").value;
+
+    let responseMessage = document.getElementById("responseMessage");
+
+    try {
+        let response = await fetch('https://samirweb6-production.up.railway.app/submit-form', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: naam,
+                email: email,
+                question: vraag
+            })
+        });
+
+        let result = await response.json();
+        responseMessage.innerText = result.message;
+        responseMessage.style.color = "green";
+
+    } catch (error) {
+        console.error("Fout bij het verzenden:", error);
+        responseMessage.innerText = "Er is iets misgegaan bij het verzenden.";
+        responseMessage.style.color = "red";
+    }
+});
