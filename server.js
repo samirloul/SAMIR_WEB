@@ -124,6 +124,7 @@ app.get('/', (req, res) => {
 });
 
 // ✅ Server starten
-app.listen(3000, () => {
-    console.log("Server draait op http://localhost:3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server draait op poort ${PORT}`);
 });
