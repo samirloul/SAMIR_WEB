@@ -125,7 +125,7 @@ app.get('/', (req, res) => {
 });
 
 // ✅ Server starten
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080; // Moet PORT gebruiken van Railway
 app.listen(PORT, () => {
     console.log(`Server draait op poort ${PORT}`);
 });
