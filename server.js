@@ -30,7 +30,8 @@ app.use(limiter);
 
 // ✅ Contactformulier route met Brevo API
 app.post('/submit-form', upload.none(), async (req, res) => {
-    const { name, email, question } = req.body;
+    console.log("POST request ontvangen op /submit-form");
+    console.log(req.body); // Log de request body voor debuggen
 
     if (!name || !email || !question) {
         return res.status(400).json({ message: "Alle velden zijn verplicht." });
