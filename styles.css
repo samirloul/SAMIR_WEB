@@ -512,3 +512,67 @@ body.light-mode #sib-container input,
 body.light-mode #sib-container textarea {
     color: black !important;
 }
+/* ✅ Contactformulier volledig responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .input-row {
+        flex-direction: column; /* Stapelt inputs onder elkaar */
+    }
+
+    .input-row input {
+        max-width: 100%; /* Zorgt dat ze de volle breedte nemen */
+    }
+
+    button {
+        width: 100%; /* Knop over de volle breedte */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    input, textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+/* ✅ Fix voor onleesbare tekst in light mode */
+body.light-mode input, 
+body.light-mode textarea {
+    background-color: white !important;
+    color: black !important;
+    border: 2px solid black !important;
+}
+
+body.dark-mode input, 
+body.dark-mode textarea {
+    background-color: #333 !important;
+    color: white !important;
+    border: 2px solid white !important;
+}
+
+/* ✅ Placeholder tekst in beide modi leesbaar */
+input::placeholder, 
+textarea::placeholder {
+    color: rgba(0, 0, 0, 0.6); /* Light mode: donkergrijs */
+}
+
+body.dark-mode input::placeholder, 
+body.dark-mode textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Dark mode: lichtgrijs */
+}
