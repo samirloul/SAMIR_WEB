@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <meta name="color-scheme" content="dark">
+<meta name="supported-color-schemes" content="dark">
+
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        
+        <ul>
+          <div class="mode-toggle">
+            <input type="checkbox" id="modeSwitch">
+            <label for="modeSwitch" class="slider"></label>
+        </div>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">My Educational Journey</a></li>
+            <li><a href="#more">More About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="contact.html">contact</a></li>
+            
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Contact</h2>
+        <p>Als je vragen hebt of verduidelijking nodig hebt, stel ze gerust! 😊</p>
+        <form id="contactForm">
+            <label for="name">Naam*</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">E-mail*</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="question">Vraag*</label>
+            <textarea id="question" name="question" required></textarea>
+            
+            <button type="submit">Verzenden</button>
+
+        
+        </form>
+        <p id="responseMessage"></p>
+    </div>
+
+    <script src="contact.js"></script>
+</body>
+</html>
