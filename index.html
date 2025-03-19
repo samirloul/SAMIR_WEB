@@ -85,18 +85,22 @@
 
 
   <h2>Contact</h2>
-  <p>Als je vragen hebt of verduidelijking nodig hebt, stel ze gerust! 😊</p>
+  <p>If you have any questions or need clarification, feel free to ask! 😊</p>
   <form id="contactForm" action="https://samirweb6-production.up.railway.app/submit-form" method="POST">
-      <label for="name">Naam*</label>
+      <label for="name">Name*</label>
       <input type="text" id="name" name="name" required>
       
       <label for="email">E-mail*</label>
       <input type="email" id="email" name="email" required>
       
-      <label for="question">Vraag*</label>
+      <label for="question">Questions*</label>
       <textarea id="question" name="question" required></textarea>
       
-      <button type="submit">Verzenden</button>
+      <button type="submit">
+        <div id="carAnimation" class="car-animation">🚗💨 📩</div>
+        Send
+    </button>
+
 
   
   </form>
