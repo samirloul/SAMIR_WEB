@@ -36,7 +36,17 @@ app.post('/submit-form', upload.none(), async (req, res) => {
     if (!name || !email || !question) {
         return res.status(400).json({ message: "Alle velden zijn verplicht." });
     }
-
+    app.post('/submit-form', upload.none(), async (req, res) => {
+        console.log("POST request ontvangen op /submit-form");
+        console.log("Request body:", req.body); // 🔍 Check de ontvangen data
+    
+        const { name, email, question } = req.body;
+    
+        if (!name || !email || !question) {
+            console.error("❌ Fout: Niet alle velden zijn ingevuld");
+            return res.status(400).json({ message: "Alle velden zijn verplicht." });
+        }
+    
     // ✅ Email HTML stijl behouden
     const emailContent = `
 <div style="font-family: Arial, sans-serif; background-color: #000 !important; color: #fff !important; padding: 20px; text-align: center;">
