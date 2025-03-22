@@ -637,17 +637,7 @@ body.dark-mode .navbar ul li a:hover {
 }
 /* ✅ Standaard knop styling */
 /* Mooie auto animatie */
-.car-animation {
-    display: inline-block;
-    position: absolute;
-    left: -50px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    opacity: 0;
-    animation: drive 2.5s ease-in-out forwards;
-    pointer-events: none;
-  }
+
   
   /* De Send knop zelf */
   button[type="submit"] {
@@ -716,7 +706,7 @@ body.dark-mode .navbar ul li a:hover {
 
 .car-animation {
     display: inline-block;
-    position: relative;
+    position: absolute;
     left: -50px;
     top: 50%;
     transform: translateY(-50%);
