@@ -91,7 +91,7 @@ app.post('/submit-form', express.json(), async (req, res) => {
         </div>
     
         <p style="margin-top: 20px;">
-            <a href="https://samirweb6-production.up.railway.app/" target="_blank" 
+            <a href="samirweb.up.railway.app" target="_blank" 
             style="color: #ffcc00; font-size: 18px; text-decoration: none;">
                 🌍 Visit my website
             </a>
