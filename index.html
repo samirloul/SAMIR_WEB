@@ -96,10 +96,11 @@
       <label for="question">Questions*</label>
       <textarea id="question" name="question" required></textarea>
       
-      <button type="submit">
-        <div id="carAnimation" class="car-animation">🚗💨 📩</div>
-        Send
-    </button>
+      <button type="submit" id="sendButton">
+        <div id="carAnimation" class="car-animation">🚗💨</div>
+        <span class="btn-text">Send</span>
+      </button>
+      
 
 
   
@@ -128,5 +129,16 @@
   <p>&copy; 2025 Samir Loul. All rights reserved.</p>
 </footer>
     <script src="script.js"></script>
+    <script>
+      const button = document.getElementById('sendButton');
+      const car = document.getElementById('carAnimation');
+    
+      button.addEventListener('click', () => {
+        car.style.display = 'inline-block';
+        car.style.animation = 'none';
+        void car.offsetWidth; // Force reflow to restart animation
+        car.style.animation = 'drive 1.8s ease-in-out forwards';
+      });
+    </script>
 </body>
 </html>

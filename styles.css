@@ -636,21 +636,80 @@ body.dark-mode .navbar ul li a:hover {
     color: black !important;
 }
 /* ✅ Standaard knop styling */
-button[type="submit"] {
-    background-color: blue;
+/* Mooie auto animatie */
+.car-animation {
+    display: inline-block;
+    position: absolute;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    opacity: 0;
+    animation: drive 2.5s ease-in-out forwards;
+    pointer-events: none;
+  }
+  
+  /* De Send knop zelf */
+  button[type="submit"] {
+    background: linear-gradient(135deg, #0000ff, #00f0ff);
     color: white;
     border: none;
-    padding: 10px 18px;
+    padding: 12px 24px;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 14px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
     position: relative;
-    transition: background 0.3s ease, transform 0.2s ease-in-out;
-}
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 255, 0.5);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+  }
+  
+  /* Tekst in de knop */
+  .btn-text {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Hover effect */
+  button[type="submit"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 255, 0.7);
+  }
+  
+  /* Activeren van animatie */
+  button[type="submit"]:active #carAnimation {
+    display: inline-block;
+    animation: drive 1.8s ease-in-out forwards;
+  }
+  
+  /* Auto rijdt over de knop */
+  @keyframes drive {
+    0% {
+      left: -50px;
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    50% {
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    100% {
+      left: 110%;
+      opacity: 0;
+    }
+  }
+  
 
-/* ✅ Hover-effect */
-button[type="submit"]:hover {
-    background-color: darkblue;
+/* ✅ Tekst verschijnt na de animatie */
+.message {
+    display: none;
+    font-size: 18px;
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
 /* ✅ Auto-animatie container (onzichtbaar bij start) */
@@ -661,20 +720,4 @@ button[type="submit"]:hover {
     text-align: center;
     margin-top: 20px;
     animation: drive 2.5s ease-in-out forwards;
-}
-
-/* ✅ Auto en envelop emoji bewegen */
-@keyframes drive {
-    0% { transform: translateX(-50px); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateX(150px); opacity: 0; }
-}
-
-/* ✅ Tekst verschijnt na de animatie */
-.message {
-    display: none;
-    font-size: 18px;
-    color: green;
-    font-weight: bold;
-    margin-top: 10px;
 }

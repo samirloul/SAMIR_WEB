@@ -58,7 +58,13 @@ document.getElementById("contactForm").addEventListener("submit", async function
         carAnimation.style.display = "inline-block"; // 🚗 Toon de auto
         sendButton.appendChild(carAnimation); // 🚗 Plaats de auto in de knop
 
-        let response = await fetch('https://samirweb.up.railway.app/', {
+        const baseUrl = location.hostname === "localhost" 
+        ? "http://localhost:8080" 
+        : "https://samirweb.up.railway.app";
+    
+    let response = await fetch(`${baseUrl}/submit-form`, {
+    
+
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -86,3 +92,4 @@ document.getElementById("contactForm").addEventListener("submit", async function
         responseMessage.style.color = "red";
     }
 });
+
