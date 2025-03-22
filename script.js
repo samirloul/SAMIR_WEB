@@ -58,7 +58,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
         carAnimation.style.display = "inline-block"; // 🚗 Toon de auto
         sendButton.appendChild(carAnimation); // 🚗 Plaats de auto in de knop
 
-        let response = await fetch('https://samirweb6-production.up.railway.app/submit-form', {
+        let response = await fetch('https://samirweb.up.railway.app/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
