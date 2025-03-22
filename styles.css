@@ -713,11 +713,15 @@ body.dark-mode .navbar ul li a:hover {
 }
 
 /* ✅ Auto-animatie container (onzichtbaar bij start) */
+
 .car-animation {
-    display: none;
+    display: inline-block;
     position: relative;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 20px;
-    text-align: center;
-    margin-top: 20px;
+    opacity: 0;
     animation: drive 2.5s ease-in-out forwards;
-}
+    pointer-events: none;
+  }
